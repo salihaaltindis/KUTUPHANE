@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KUTUPHANEModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KITAP">
+    <Key>
+      <PropertyRef Name="KITAP_REFNO" />
+    </Key>
+    <Property Name="KITAP_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADI" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ISBN" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="YAZARI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BASIM_TARIHI" Type="date" Nullable="false" />
+    <Property Name="YAYIN_EVI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OZET" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ODUNC_KITAP">
+    <Key>
+      <PropertyRef Name="ODUNC_KITAP_REFNO" />
+    </Key>
+    <Property Name="ODUNC_KITAP_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADI_SOYAD" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="KITAP_REFNO" Type="int" Nullable="false" />
+    <Property Name="VERILIS_TARIHI" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ALINIS_TARIHI" Type="varchar" MaxLength="11" />
+    <Property Name="DURUMU" Type="bit" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="UYE">
+    <Key>
+      <PropertyRef Name="UYE_REFNO" />
+    </Key>
+    <Property Name="UYE_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADI_SOYAD" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ADRES" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EKLEME_TARIHI" Type="date" Nullable="false" />
+    <Property Name="DURUMU" Type="bit" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="KUTUPHANEModel1StoreContainer">
+    <EntitySet Name="KITAP" EntityType="Self.KITAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ODUNC_KITAP" EntityType="Self.ODUNC_KITAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UYE" EntityType="Self.UYE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

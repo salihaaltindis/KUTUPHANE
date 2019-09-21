@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KUTUPHANEModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KITAP">
+    <Key>
+      <PropertyRef Name="KITAP_REFNO" />
+    </Key>
+    <Property Name="KITAP_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YAZARI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BASIM_TARIHI" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="YAYIN_EVI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OZET" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ODUNC_KITAP">
+    <Key>
+      <PropertyRef Name="ODUNC_KITAP_REFNO" />
+    </Key>
+    <Property Name="ODUNC_KITAP_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADI_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KITAP_REFNO" Type="Int32" Nullable="false" />
+    <Property Name="VERILIS_TARIHI" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ALINIS_TARIHI" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UYE">
+    <Key>
+      <PropertyRef Name="UYE_REFNO" />
+    </Key>
+    <Property Name="UYE_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADI_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADRES" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EKLEME_TARIHI" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="KUTUPHANEEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KITAPs" EntityType="Self.KITAP" />
+    <EntitySet Name="ODUNC_KITAP" EntityType="Self.ODUNC_KITAP" />
+    <EntitySet Name="UYEs" EntityType="Self.UYE" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KUTUPHANEModel1StoreContainer" CdmEntityContainer="KUTUPHANEEntities1">
+    <EntitySetMapping Name="KITAPs">
+      <EntityTypeMapping TypeName="KUTUPHANEModel1.KITAP">
+        <MappingFragment StoreEntitySet="KITAP">
+          <ScalarProperty Name="KITAP_REFNO" ColumnName="KITAP_REFNO" />
+          <ScalarProperty Name="ADI" ColumnName="ADI" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="YAZARI" ColumnName="YAZARI" />
+          <ScalarProperty Name="BASIM_TARIHI" ColumnName="BASIM_TARIHI" />
+          <ScalarProperty Name="YAYIN_EVI" ColumnName="YAYIN_EVI" />
+          <ScalarProperty Name="OZET" ColumnName="OZET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ODUNC_KITAP">
+      <EntityTypeMapping TypeName="KUTUPHANEModel1.ODUNC_KITAP">
+        <MappingFragment StoreEntitySet="ODUNC_KITAP">
+          <ScalarProperty Name="ODUNC_KITAP_REFNO" ColumnName="ODUNC_KITAP_REFNO" />
+          <ScalarProperty Name="ADI_SOYAD" ColumnName="ADI_SOYAD" />
+          <ScalarProperty Name="KITAP_REFNO" ColumnName="KITAP_REFNO" />
+          <ScalarProperty Name="VERILIS_TARIHI" ColumnName="VERILIS_TARIHI" />
+          <ScalarProperty Name="ALINIS_TARIHI" ColumnName="ALINIS_TARIHI" />
+          <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UYEs">
+      <EntityTypeMapping TypeName="KUTUPHANEModel1.UYE">
+        <MappingFragment StoreEntitySet="UYE">
+          <ScalarProperty Name="UYE_REFNO" ColumnName="UYE_REFNO" />
+          <ScalarProperty Name="ADI_SOYAD" ColumnName="ADI_SOYAD" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="EKLEME_TARIHI" ColumnName="EKLEME_TARIHI" />
+          <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

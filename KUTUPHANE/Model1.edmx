@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KUTUPHANEModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KITAP">
+          <Key>
+            <PropertyRef Name="KITAP_REFNO" />
+          </Key>
+          <Property Name="KITAP_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADI" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="YAZARI" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BASIM_TARIHI" Type="date" Nullable="false" />
+          <Property Name="YAYIN_EVI" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OZET" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ODUNC_KITAP">
+          <Key>
+            <PropertyRef Name="ODUNC_KITAP_REFNO" />
+          </Key>
+          <Property Name="ODUNC_KITAP_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADI_SOYAD" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="KITAP_REFNO" Type="int" Nullable="false" />
+          <Property Name="VERILIS_TARIHI" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ALINIS_TARIHI" Type="varchar" MaxLength="11" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="UYE">
+          <Key>
+            <PropertyRef Name="UYE_REFNO" />
+          </Key>
+          <Property Name="UYE_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADI_SOYAD" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ADRES" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EKLEME_TARIHI" Type="date" Nullable="false" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="KUTUPHANEModel1StoreContainer">
+          <EntitySet Name="KITAP" EntityType="Self.KITAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ODUNC_KITAP" EntityType="Self.ODUNC_KITAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UYE" EntityType="Self.UYE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KUTUPHANEModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KITAP">
+          <Key>
+            <PropertyRef Name="KITAP_REFNO" />
+          </Key>
+          <Property Name="KITAP_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YAZARI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BASIM_TARIHI" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="YAYIN_EVI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OZET" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ODUNC_KITAP">
+          <Key>
+            <PropertyRef Name="ODUNC_KITAP_REFNO" />
+          </Key>
+          <Property Name="ODUNC_KITAP_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADI_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KITAP_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="VERILIS_TARIHI" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ALINIS_TARIHI" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UYE">
+          <Key>
+            <PropertyRef Name="UYE_REFNO" />
+          </Key>
+          <Property Name="UYE_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADI_SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADRES" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EKLEME_TARIHI" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="KUTUPHANEEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KITAPs" EntityType="Self.KITAP" />
+          <EntitySet Name="ODUNC_KITAP" EntityType="Self.ODUNC_KITAP" />
+          <EntitySet Name="UYEs" EntityType="Self.UYE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KUTUPHANEModel1StoreContainer" CdmEntityContainer="KUTUPHANEEntities1">
+          <EntitySetMapping Name="KITAPs">
+            <EntityTypeMapping TypeName="KUTUPHANEModel1.KITAP">
+              <MappingFragment StoreEntitySet="KITAP">
+                <ScalarProperty Name="KITAP_REFNO" ColumnName="KITAP_REFNO" />
+                <ScalarProperty Name="ADI" ColumnName="ADI" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="YAZARI" ColumnName="YAZARI" />
+                <ScalarProperty Name="BASIM_TARIHI" ColumnName="BASIM_TARIHI" />
+                <ScalarProperty Name="YAYIN_EVI" ColumnName="YAYIN_EVI" />
+                <ScalarProperty Name="OZET" ColumnName="OZET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODUNC_KITAP">
+            <EntityTypeMapping TypeName="KUTUPHANEModel1.ODUNC_KITAP">
+              <MappingFragment StoreEntitySet="ODUNC_KITAP">
+                <ScalarProperty Name="ODUNC_KITAP_REFNO" ColumnName="ODUNC_KITAP_REFNO" />
+                <ScalarProperty Name="ADI_SOYAD" ColumnName="ADI_SOYAD" />
+                <ScalarProperty Name="KITAP_REFNO" ColumnName="KITAP_REFNO" />
+                <ScalarProperty Name="VERILIS_TARIHI" ColumnName="VERILIS_TARIHI" />
+                <ScalarProperty Name="ALINIS_TARIHI" ColumnName="ALINIS_TARIHI" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UYEs">
+            <EntityTypeMapping TypeName="KUTUPHANEModel1.UYE">
+              <MappingFragment StoreEntitySet="UYE">
+                <ScalarProperty Name="UYE_REFNO" ColumnName="UYE_REFNO" />
+                <ScalarProperty Name="ADI_SOYAD" ColumnName="ADI_SOYAD" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="EKLEME_TARIHI" ColumnName="EKLEME_TARIHI" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
